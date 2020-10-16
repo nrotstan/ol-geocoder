@@ -210,7 +210,7 @@ export class Nominatim {
     const projection = map.getView().getProjection();
     const coord = proj.transform(coord_, 'EPSG:4326', projection);
 
-    let { bbox } = place;
+    let bbox = place.boundingbox;
 
     if (bbox) {
       bbox = proj.transformExtent(bbox, 'EPSG:4326', projection);
